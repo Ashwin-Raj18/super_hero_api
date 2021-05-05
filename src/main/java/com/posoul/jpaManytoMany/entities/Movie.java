@@ -29,7 +29,7 @@ public class Movie {
 	
 	@Column(unique = true)
 	private String movieName;
-	
+														// superheroes is owning side we dont want to remove movie if we delete a hero so remove is not included
 	@ManyToMany(mappedBy = "movies", fetch = FetchType.EAGER, cascade = { CascadeType.MERGE, CascadeType.PERSIST })
 	private List<SuperHero> superHeros = new ArrayList<SuperHero>();
 	
